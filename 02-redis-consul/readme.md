@@ -8,15 +8,15 @@
 | ---------- | ---- | ---------------------------------------- |
 | 2017-07-06 | 进行中  | redis高可用测试                               |
 | 2017-07-07 | 进行中  | redis自动配置脚本                              |
-| 2017-07-11 | 进行中  | 线上测试[redis自动部署脚本](case/01-redis-consul/redisScripts/) |
-| 2017-07-12 | 进行中  | 完成[安装](01-redis-consul/01redis实施过程记录.md)并提交文档[Redis主从高可用实施文档](case/01-redis-consul/02Redis主从高可用实施文档.md) |
+| 2017-07-11 | 进行中  | 线上测试[redis自动部署脚本](01-redis-consul/redisScripts/) |
+| 2017-07-12 | 进行中  | 完成[安装](01-redis-consul/01redis实施过程记录.md)并提交文档[Redis主从高可用实施文档](01-redis-consul/02Redis主从高可用实施文档.md) |
 
 
 
 ## 项目总结
 
 1.  内部总结文档[Redis-sentinel-consul高可用](01-redis-consul/case/Redis-sentinel-consul高可用.md)
-2.  [redis高可用自动化脚本](case/01-redis-consul/redisScripts/)的实现
+2.  [redis高可用自动化脚本](01-redis-consul/redisScripts/)的实现
 3.  设置计划任务实现consul日志轮询和自动清理
 
 

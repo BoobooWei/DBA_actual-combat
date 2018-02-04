@@ -1,0 +1,673 @@
+==> Starting Consul agent...
+==> Consul agent running!
+           Version: 'v0.8.5'
+           Node ID: '854f7194-3d9e-1570-2daa-a5133537a520'
+         Node name: 'foundation0.ilt.example.com'
+        Datacenter: 'dc1'
+            Server: true (bootstrap: false)
+       Client Addr: 127.0.0.1 (HTTP: 8500, HTTPS: -1, DNS: 8600)
+      Cluster Addr: 127.0.0.1 (LAN: 8301, WAN: 8302)
+    Gossip encrypt: false, RPC-TLS: false, TLS-Incoming: false
+
+==> Log data will now stream in as it occurs:
+
+    2017/07/06 17:09:40 [DEBUG] Using random ID "854f7194-3d9e-1570-2daa-a5133537a520" as node ID
+    2017/07/06 17:09:40 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:127.0.0.1:8300 Address:127.0.0.1:8300}]
+    2017/07/06 17:09:40 [INFO] raft: Node at 127.0.0.1:8300 [Follower] entering Follower state (Leader: "")
+    2017/07/06 17:09:40 [INFO] serf: EventMemberJoin: foundation0.ilt.example.com 127.0.0.1
+    2017/07/06 17:09:40 [INFO] consul: Adding LAN server foundation0.ilt.example.com (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2017/07/06 17:09:40 [INFO] serf: EventMemberJoin: foundation0.ilt.example.com.dc1 127.0.0.1
+    2017/07/06 17:09:40 [DEBUG] agent: pausing 1.914240167s before first invocation of bash /usr/local/consul/mysqltest.sh 172.25.0.12
+    2017/07/06 17:09:40 [INFO] consul: Handled member-join event for server "foundation0.ilt.example.com.dc1" in area "wan"
+    2017/07/06 17:09:40 [DEBUG] agent: pausing 928.665334ms before first invocation of bash /usr/local/consul/mysqltest.sh 172.25.0.11
+    2017/07/06 17:09:40 [INFO] agent: Started DNS server 127.0.0.1:8600 (udp)
+    2017/07/06 17:09:40 [INFO] agent: Started DNS server 127.0.0.1:8600 (tcp)
+    2017/07/06 17:09:40 [INFO] agent: Started HTTP server on 127.0.0.1:8500
+    2017/07/06 17:09:40 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2017/07/06 17:09:40 [INFO] raft: Node at 127.0.0.1:8300 [Candidate] entering Candidate state in term 2
+    2017/07/06 17:09:40 [DEBUG] raft: Votes needed: 1
+    2017/07/06 17:09:40 [DEBUG] raft: Vote granted from 127.0.0.1:8300 in term 2. Tally: 1
+    2017/07/06 17:09:40 [INFO] raft: Election won. Tally: 1
+    2017/07/06 17:09:40 [INFO] raft: Node at 127.0.0.1:8300 [Leader] entering Leader state
+    2017/07/06 17:09:40 [INFO] consul: cluster leadership acquired
+    2017/07/06 17:09:40 [DEBUG] consul: reset tombstone GC to index 3
+    2017/07/06 17:09:40 [INFO] consul: New leader elected: foundation0.ilt.example.com
+    2017/07/06 17:09:40 [INFO] consul: member 'foundation0.ilt.example.com' joined, marking health alive
+    2017/07/06 17:09:40 [INFO] agent: Synced service 'consul'
+    2017/07/06 17:09:40 [INFO] agent: Synced service 'mysqlnode1'
+    2017/07/06 17:09:40 [INFO] agent: Synced service 'mysqlnode2'
+    2017/07/06 17:09:40 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:09:40 [DEBUG] agent: Check 'service:mysqlnode2' in sync
+    2017/07/06 17:09:40 [DEBUG] agent: Node info in sync
+    2017/07/06 17:09:41 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:09:41 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:09:42 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:09:42 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:09:42 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:09:42 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:09:42 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:09:42 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:09:42 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:09:42 [DEBUG] agent: Node info in sync
+    2017/07/06 17:09:46 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:09:46 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:09:47 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:09:47 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:09:51 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:09:51 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:09:52 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:09:52 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:09:52 [DEBUG] dns: request for {mysql.service.consul. 33 1} (167.339µs) from client 127.0.0.1:51084 (udp)
+    2017/07/06 17:09:52 [DEBUG] dns: request for {mysql.service.consul. 33 1} (91.892µs) from client 127.0.0.1:48938 (udp)
+    2017/07/06 17:09:56 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:09:56 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:09:57 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:09:57 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:10:01 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:01 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:10:02 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:10:02 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:10:06 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:06 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:06 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:10:06 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:10:06 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:10:06 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:10:06 [DEBUG] agent: Check 'service:mysqlnode2' in sync
+    2017/07/06 17:10:06 [DEBUG] agent: Node info in sync
+    2017/07/06 17:10:07 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:07 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:07 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:10:07 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:10:07 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:10:07 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:10:07 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:10:07 [DEBUG] agent: Node info in sync
+    2017/07/06 17:10:11 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:11 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:12 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:12 [WARN] agent: Check 'service:mysqlnode2' is now critical
+==> Failed to check for updates: Get https://checkpoint-api.hashicorp.com/v1/check/consul?arch=amd64&os=linux&signature=&version=0.8.5: dial tcp: lookup checkpoint-api.hashicorp.com on 172.25.254.250:53: read udp 172.25.254.250:33934->172.25.254.250:53: i/o timeout
+    2017/07/06 17:10:16 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:16 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:17 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:17 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:21 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:21 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:22 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:22 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:23 [DEBUG] dns: request for {mysql.service.consul. 33 1} (126.419µs) from client 127.0.0.1:41652 (udp)
+    2017/07/06 17:10:23 [DEBUG] dns: request for {mysql.service.consul. 33 1} (120.296µs) from client 127.0.0.1:38230 (udp)
+    2017/07/06 17:10:26 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:26 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:27 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:27 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:31 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:31 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:32 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:32 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:36 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:36 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:37 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:37 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:41 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:41 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:42 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:42 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:46 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:46 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:47 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:47 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:51 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:51 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:52 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:52 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:10:56 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:10:56 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:10:57 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:10:57 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:01 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:11:01 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:11:01 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:11:01 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:11:01 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:11:01 [DEBUG] agent: Node info in sync
+    2017/07/06 17:11:01 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:01 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:02 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:02 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:06 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:06 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:07 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:07 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:11 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:11 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:12 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:12 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:16 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:16 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:17 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:17 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:21 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:21 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:22 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:22 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:26 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:26 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:27 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:27 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:31 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:31 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:32 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:32 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:36 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:36 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:37 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:37 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:40 [DEBUG] manager: Rebalanced 1 servers, next active server is foundation0.ilt.example.com.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2017/07/06 17:11:41 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:41 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:42 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: mysqladmin: connect to server at '172.25.0.12' failed
+error: 'Can't connect to MySQL server on '172.25.0.12' (111)'
+Check that mysqld is running on 172.25.0.12 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.12 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.12' (111)
+    2017/07/06 17:11:42 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:11:46 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:46 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:47 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:11:47 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:11:47 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:11:47 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:11:47 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:11:47 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:11:47 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:11:47 [DEBUG] agent: Node info in sync
+    2017/07/06 17:11:51 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:51 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:52 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:11:52 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:11:56 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:11:56 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:11:57 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:11:57 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:02 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:02 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:02 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:02 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:07 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:07 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:07 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:07 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:12 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:12 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:12 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:12 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:17 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:17 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:17 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:12:17 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:12:17 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:12:17 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:12:17 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:12:17 [DEBUG] agent: Node info in sync
+    2017/07/06 17:12:17 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:17 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:22 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:22 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:22 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:22 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:27 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:27 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:27 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:27 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:32 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:32 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:32 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:32 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:37 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:37 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:37 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:37 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:42 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:42 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:42 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:42 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:47 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:47 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:47 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:47 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:52 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:52 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:52 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:52 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:12:57 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:12:57 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:12:57 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:12:57 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:13:02 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:02 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:02 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:02 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:13:07 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:07 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:07 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:07 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:07 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:13:07 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:13:07 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:13:07 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:13:07 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:13:07 [DEBUG] agent: Node info in sync
+    2017/07/06 17:13:12 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:12 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:12 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:12 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:17 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:17 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:17 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:17 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:22 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:22 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:22 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:22 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:24 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:13:24 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:13:24 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:13:24 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:13:24 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:13:24 [DEBUG] agent: Node info in sync
+    2017/07/06 17:13:27 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:27 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:27 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:27 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:32 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:32 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:32 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:32 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:37 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:37 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:37 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:37 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:42 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: 
+    2017/07/06 17:13:42 [DEBUG] agent: Check 'service:mysqlnode1' is passing
+    2017/07/06 17:13:42 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:42 [WARN] agent: Check 'service:mysqlnode2' is now critical
+    2017/07/06 17:13:47 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:13:47 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:13:47 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:13:47 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:13:47 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:13:47 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:13:47 [DEBUG] agent: Check 'service:mysqlnode2' in sync
+    2017/07/06 17:13:47 [DEBUG] agent: Node info in sync
+    2017/07/06 17:13:48 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:48 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:13:48 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:13:48 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:13:48 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:13:48 [DEBUG] agent: Check 'service:mysqlnode1' in sync
+    2017/07/06 17:13:48 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:13:48 [DEBUG] agent: Node info in sync
+    2017/07/06 17:13:52 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:13:52 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:13:53 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:53 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:13:57 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:13:57 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:13:58 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:13:58 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:13:58 [DEBUG] dns: request for {mysql.service.consul. 33 1} (98.521µs) from client 127.0.0.1:35744 (udp)
+    2017/07/06 17:13:58 [DEBUG] dns: request for {mysql.service.consul. 33 1} (114.327µs) from client 127.0.0.1:50118 (udp)
+    2017/07/06 17:14:02 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:02 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:03 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:03 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:07 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:07 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:08 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:08 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:12 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:12 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:13 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:13 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:17 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:17 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:18 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:18 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:22 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:22 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:22 [DEBUG] manager: Rebalanced 1 servers, next active server is foundation0.ilt.example.com.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2017/07/06 17:14:23 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:23 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:27 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:27 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:28 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:28 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:32 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:32 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:33 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:33 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:37 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:37 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:38 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:38 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:39 [DEBUG] agent: Service 'consul' in sync
+    2017/07/06 17:14:39 [DEBUG] agent: Service 'mysqlnode1' in sync
+    2017/07/06 17:14:39 [DEBUG] agent: Service 'mysqlnode2' in sync
+    2017/07/06 17:14:39 [INFO] agent: Synced check 'service:mysqlnode1'
+    2017/07/06 17:14:39 [INFO] agent: Synced check 'service:mysqlnode2'
+    2017/07/06 17:14:39 [DEBUG] agent: Node info in sync
+    2017/07/06 17:14:42 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:42 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:43 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:43 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:47 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:47 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:48 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:48 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:52 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:52 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:53 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:53 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:14:57 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:14:57 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:14:58 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:14:58 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:02 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:02 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:03 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:03 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:07 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:07 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:08 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:08 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:12 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:12 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:13 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:13 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:17 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:17 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:18 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:18 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:22 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:22 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:23 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:23 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:27 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:27 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:28 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:28 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:32 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:32 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:33 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:33 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:37 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:37 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:38 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:38 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:42 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:42 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:43 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:43 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:47 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (115)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:47 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:48 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:48 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:52 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:52 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:53 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:53 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:15:57 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:15:57 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:15:58 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:15:58 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:16:02 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:16:02 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:16:03 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:16:03 [DEBUG] agent: Check 'service:mysqlnode2' is passing
+    2017/07/06 17:16:07 [DEBUG] agent: Check 'service:mysqlnode1' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.11' output: mysqladmin: connect to server at '172.25.0.11' failed
+error: 'Can't connect to MySQL server on '172.25.0.11' (111)'
+Check that mysqld is running on 172.25.0.11 and that the port is 3306.
+You can check this by doing 'telnet 172.25.0.11 3306'
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.25.0.11' (111)
+    2017/07/06 17:16:07 [WARN] agent: Check 'service:mysqlnode1' is now critical
+    2017/07/06 17:16:08 [DEBUG] agent: Check 'service:mysqlnode2' script 'bash /usr/local/consul/mysqltest.sh 172.25.0.12' output: 
+    2017/07/06 17:16:08 [DEBUG] agent: Check 'service:mysqlnode2' is passing

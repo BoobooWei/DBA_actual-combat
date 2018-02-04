@@ -1,0 +1,34 @@
+{
+    "services": [
+        {
+	    "id":"mysqlnode1",
+            "name": "mysql",
+            "tags": [
+                "master"
+            ],
+            "address": "172.25.0.11",
+            "port": 3306,
+    	    "checks": [
+            {  
+              "script": "bash /usr/local/consul/mysqltest.sh 172.25.0.11",
+              "interval": "5s"
+            }
+          ]
+        },
+        {
+	    "id":"mysqlnode2",
+            "name": "mysql",
+            "tags": [
+                "master"
+            ],
+            "address": "172.25.0.12",
+            "port": 3306,
+    	    "checks": [
+            {  
+              "script": "bash /usr/local/consul/mysqltest.sh 172.25.0.12",
+              "interval": "5s"
+            }
+          ]
+        }
+    ]
+}
